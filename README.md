@@ -101,6 +101,8 @@ The `D5CutCountTableMerged` counts the number of cells with $D_\text{CD8+FoxP3+}
 
 Two views on this table are also created: `D5CutCountTable` and `D5CutCountTableDR`, which select for `usedonuts=0` and `usedonuts=1`, respectively.
 
+In addition to using the trained models given by `trainingsetid` and defined in `A1.2-bookkeepingtables.sql`, there are also rows with `trainingsetid=0` and `distancebinselectionid=0`.  These rows give the numbers of actual CD8+FoxP3+ cells in the sample.
+
 ### A3.3-RocInputs.sql
 
 This script creates the `RocInputs` table, which contains the inputs for the ROC curve derived from `D5CutCountTableMerged`.  Each ROC curve is defined by:

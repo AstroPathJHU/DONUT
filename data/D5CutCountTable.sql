@@ -15,6 +15,8 @@ select usedonuts, trainingsetid, testsetid, distancebinselectionid, d.sampleid, 
 1.0 * ncells_tdistcut / nrandomcells_tdistcut density
 from D5CutCountTableMerged d
 inner join ResponseMerged r on d.sampleid = r.sampleid
-where abs(d5cut - 0.4499997) < 0.00001
-or (distancebinselectionid = 0 and d5cut = 1)
+where (abs(d5cut - 0.4499997) < 0.00001
+or (distancebinselectionid = 0 and d5cut = 1))
+and nrandomcells_tdistcut > 0
+and trainingsetid in (0, 1)
 order by trainingsetid, testsetid, usedonuts, distancebinselectionid, sampleid
