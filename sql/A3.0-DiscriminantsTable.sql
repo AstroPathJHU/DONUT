@@ -108,7 +108,7 @@ select sampleid, cellid, ptype_lung, tdist_microns, 0 trainingsetid, 0 distanceb
 	   case when ptype_lung=3 then 1 else 0 end D3_raw,
 	   case when ptype_lung=4 then 1 else 0 end D4_raw,
 	   case when ptype_lung=5 then 1 else 0 end D5_raw,
-	   case when ptype_lung=5 and sampleid not in (547, 566) then 1 else 0 end D5
+	   case when ptype_lung=5 and sampleid not in (566) then 1 else 0 end D5
 from celltable
 go
 
